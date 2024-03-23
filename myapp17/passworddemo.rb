@@ -16,3 +16,5 @@ while (line = input.gets)
 end
 
 print "your password is not weak"
+
+
