@@ -1,0 +1,2 @@
+# encoding: cp866
+puts "вас зовут Матвей\t\nбукв в имени 6\t\nhttp://shots.m18.ru/5zilg4pqx2/"

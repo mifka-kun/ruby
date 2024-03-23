@@ -1,0 +1,6 @@
+puts "initialize"
+puts "attr reader/accessor/writer"
+puts "<body>"
+puts "private"
+puts "метапрограмирование"
+puts "method_mising"
