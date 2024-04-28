@@ -14,13 +14,15 @@ get '/visit' do
 end
 
 post '/visit' do
+  @barber = params[:barber]
   @user_name = params[:user_name]
   @phone = params[:phone]
   @date_time = params[:date_time]
 
   path = "./public/visits.txt"
   output = File.open path, "a"
-  output.puts "#{@user_name} #{@phone} #{@date_time}"
+  output.puts "|#{@barber}\t|#{@user_name}\t|#{@phone}\t|#{@date_time}|"
+  output.close
   @title = "Thank you!"
   @message = "Dear #{@user_name}, we'll be waiting for you at #{@date_time}"
 

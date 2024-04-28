@@ -39,17 +39,17 @@
 <form action="/visit" method="POST">
 
 	Your hairdresser:
-	<select>
-    <option>Walter White</option>
-    <option>Jessie Pinkman</option>
-	<option>Gus Fring</option>
-	</select>
+	<select name = "barber">
+		<option>Walter White</option>
+		<option>Jessie Pinkman</option>
+		<option>Gus Fring</option>
+	</select><br/>
     Your name:
     <input type="text" name="user_name" /> <br/>
     Your phone:
     <input type="text" name="phone" /> <br/>
     Date and time:
-    <input type="text" name="date_time" /> <br/>
+    <input type="datetime-local" name="date_time" /> <br/>
 
     <input type="submit" class="btn btn-primary"/>
 
