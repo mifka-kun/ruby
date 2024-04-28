@@ -18,10 +18,12 @@ post '/visit' do
   @phone = params[:phone]
   @date_time = params[:date_time]
 
+  path = "./public/visits.txt"
+  output = File.open path, "a"
+  output.puts "#{@user_name} #{@phone} #{@date_time}"
   @title = "Thank you!"
   @message = "Dear #{@user_name}, we'll be waiting for you at #{@date_time}"
 
-  erb :message
 end
 
 
