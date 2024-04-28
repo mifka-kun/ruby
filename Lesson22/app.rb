@@ -1,6 +1,34 @@
 require 'rubygems'
 require 'sinatra'
 
+get '/' do
+  erb 'Welcome to <a href="/secure/place">the Barbershop</a>!'
+end
+
+get '/about' do
+  erb :about
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 configure do
   enable :sessions
 end
@@ -17,10 +45,6 @@ before '/secure/*' do
     @error = 'Sorry, you need to be logged in to visit ' + request.path
     halt erb(:login_form)
   end
-end
-
-get '/' do
-  erb 'Can you handle a <a href="/secure/place">secret</a>?'
 end
 
 get '/login/form' do
