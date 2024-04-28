@@ -1,23 +1,6 @@
 require 'rubygems'
 require 'sinatra'
 
-set :public_folder, __dir__ + '/public'
-
-get '/' do
-    erb :index
-end
-
-post '/' do
-    @login = params[:aaa]
-    @password = params[:bbb]
-
-    if @login == "aaa" and @password == "bbb"
-        erb :welcome
-    else
-        erb :accessdenied
-    end
-end
-
 configure do
   enable :sessions
 end
@@ -36,25 +19,19 @@ before '/secure/*' do
   end
 end
 
+set :public_folder, __dir__ + '/public'
+
 get '/' do
-  erb 'Can you handle a <a href="/secure/place">secret</a>?'
+    erb :index
 end
 
-get '/login/form' do
-  erb :login_form
-end
+post '/' do
+    @login = params[:aaa]
+    @password = params[:bbb]
 
-post '/login/attempt' do
-  session[:identity] = params['username']
-  where_user_came_from = session[:previous_url] || '/'
-  redirect to where_user_came_from
-end
-
-get '/logout' do
-  session.delete(:identity)
-  erb "<div class='alert alert-message'>Logged out</div>"
-end
-
-get '/secure/place' do
-  erb 'This is a secret place that only <%=session[:identity]%> has access to!'
+    if @login == "aaa" and @password == "bbb"
+        erb :welcome
+    else
+        erb :accessdenied
+    end
 end
