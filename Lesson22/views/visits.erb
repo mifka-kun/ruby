@@ -45,12 +45,17 @@
 		<option>Gus Fring</option>
 	</select><br/>
     Your name:
-    <input type="text" name="user_name" /> <br/>
+    <input id="aaa" type="text" name="user_name" /> <br/>
     Your phone:
-    <input type="text" name="phone" /> <br/>
+	<input id="bbb" type="datetime-local" name="date_time" /> <br/>
     Date and time:
-    <input type="datetime-local" name="date_time" /> <br/>
+    <input id="ccc" type="datetime-local" name="date_time" /> <br/>
 
     <input type="submit" class="btn btn-primary"/>
 
 </form>
+
+<script type="text/javascript">
+$('#aaa').css('background-color','grey')
+$('#bbb').css('background-color','blue')
+$('.ccc').css('background-color','red')
